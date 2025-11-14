@@ -27,9 +27,13 @@
         app:layout_constraintEnd_toEndOf="parent">
 
 
-
         <TextView
             android:id="@+id/TestLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="AWOKAWOAKWOWKWOK"/>
+        <TextView
+            android:id="@+id/TestLoggingin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="AWOKAWOAKWOWKWOK"/>
