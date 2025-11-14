@@ -11,7 +11,7 @@
 
     <!-- Judul Halaman -->
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create your account"
@@ -25,35 +25,35 @@
 
     <!-- Username -->
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/et_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="36dp" />
 
     <!-- Full Name -->
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/et_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Full Name"
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/etUsername"
+        app:layout_constraintTop_toBottomOf="@id/et_username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
     <!-- Email -->
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -61,14 +61,14 @@
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/etName"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
     <!-- Password -->
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/et_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -76,34 +76,34 @@
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/et_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
     <!-- Tombol Register -->
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:backgroundTint="#4DA3FF"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp" />
 
     <!-- Link ke Login -->
     <TextView
-        android:id="@+id/tvLoginLink"
+        android:id="@+id/tv_login_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Have an account already? Login"
         android:textColor="#4DA3FF"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />

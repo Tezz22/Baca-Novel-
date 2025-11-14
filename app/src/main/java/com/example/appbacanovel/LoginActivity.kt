@@ -22,10 +22,10 @@ class LoginActivity : AppCompatActivity() {
 
         }
         // Manggil Variabel
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val tvRegisterLink = findViewById<TextView>(R.id.tvRegisterLink)
+        val etEmail = findViewById<EditText>(R.id.et_email)
+        val etPassword = findViewById<EditText>(R.id.et_password)
+        val btnLogin = findViewById<Button>(R.id.btn_login)
+        val tvRegisterLink = findViewById<TextView>(R.id.tv_register_link)
 
         // Button Login
         btnLogin.setOnClickListener {
