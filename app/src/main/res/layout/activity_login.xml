@@ -10,7 +10,7 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome Back!"
@@ -23,7 +23,7 @@
         android:layout_marginTop="60dp" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -31,13 +31,13 @@
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="48dp" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/et_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -45,32 +45,32 @@
         android:backgroundTint="#4DA3FF"
         android:textColor="#FFFFFF"
         android:textColorHint="#A0A0A0"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/et_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:backgroundTint="#4DA3FF"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp" />
 
     <TextView
-        android:id="@+id/tvRegisterLink"
+        android:id="@+id/tv_register_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don’t have an account? Register"
         android:textColor="#4DA3FF"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
