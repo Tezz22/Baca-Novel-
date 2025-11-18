@@ -135,7 +135,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutGenre"
             app:layout_constraintEnd_toStartOf="@id/btnBookmark"
-            app:layout_constraintHorizontalWeight="1"
+
             android:layout_marginTop="16dp" />
 
         <!-- TOMBOL BOOKMARK -->
@@ -177,30 +177,31 @@
             app:layout_constraintTop_toBottomOf="@id/btnBaca" />
 
         <!-- SERUPA LAINNYA -->
+
+        <!-- RECYCLER VIEW -->
         <TextView
             android:id="@+id/txtSerupa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:text="Serupa Lainnya"
             android:textColor="@android:color/white"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:layout_marginTop="24dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtSinopsis" />
 
-        <!-- RECYCLER VIEW -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRekomendasi"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtSerupa"
-            tools:listitem="@layout/item_cover_buku"
-            />
+            tools:listitem="@layout/item_cover_buku" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

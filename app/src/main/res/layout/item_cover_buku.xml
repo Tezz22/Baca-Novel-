@@ -21,4 +21,12 @@
         android:src="@drawable/cover2"
         />
 
+    <ImageView
+        android:id="@+id/imgCoverItem3"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover3"
+        />
+
 </LinearLayout>
