@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,15 +30,16 @@ class LoginActivity : AppCompatActivity() {
 
         // Button Login
         btnLogin.setOnClickListener {
-            val email = etEmail.text.toString()
-            val password = etPassword.text.toString()
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
 
-            val intentLogin = Intent(this, MainActivity::class.java)
-            intentLogin.putExtra(KEY_USERNAME, email)
-            startActivity(intentLogin)
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Email & password wajib diisi", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
-    }
-    companion object {
-        const val KEY_USERNAME: String = "username"
     }
 }
