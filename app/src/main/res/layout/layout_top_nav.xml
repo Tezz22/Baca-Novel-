@@ -9,7 +9,7 @@
 
     <!-- Logo / Nama App -->
     <TextView
-        android:id="@+id/tvAppName"
+        android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BacaNovel"
@@ -22,19 +22,19 @@
 
     <!-- Tombol Search -->
     <ImageView
-        android:id="@+id/btnSearch"
+        android:id="@+id/btn_search"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_search"
-        app:layout_constraintEnd_toStartOf="@id/btnProfile"
+        app:layout_constraintEnd_toStartOf="@id/btn_profile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:tint="#FFFFFF" />
 
     <!-- Tombol Profil -->
     <ImageView
-        android:id="@+id/btnProfile"
+        android:id="@+id/btn_profile"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_profile"

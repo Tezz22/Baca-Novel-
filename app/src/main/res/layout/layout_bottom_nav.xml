@@ -9,7 +9,7 @@
 
     <!-- Home -->
     <LinearLayout
-        android:id="@+id/navHome"
+        android:id="@+id/nav_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/navLibrary"
+        app:layout_constraintEnd_toStartOf="@id/nav_history"
         app:layout_constraintHorizontal_chainStyle="spread_inside">
 
         <ImageView
@@ -27,34 +27,34 @@
             app:tint="#FFFFFF" />
     </LinearLayout>
 
-    <!-- Library -->
+    <!-- History -->
     <LinearLayout
-        android:id="@+id/navLibrary"
+        android:id="@+id/nav_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintStart_toEndOf="@id/navHome"
-        app:layout_constraintEnd_toStartOf="@id/navFavorite"
+        app:layout_constraintStart_toEndOf="@id/nav_home"
+        app:layout_constraintEnd_toStartOf="@id/nav_favorite"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_library"
+            android:src="@drawable/ic_history"
             app:tint="#FFFFFF" />
     </LinearLayout>
 
     <!-- Favorite -->
     <LinearLayout
-        android:id="@+id/navFavorite"
+        android:id="@+id/nav_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintStart_toEndOf="@id/navLibrary"
-        app:layout_constraintEnd_toStartOf="@id/navList"
+        app:layout_constraintStart_toEndOf="@id/nav_history"
+        app:layout_constraintEnd_toStartOf="@id/nav_list"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -67,12 +67,12 @@
 
     <!-- List -->
     <LinearLayout
-        android:id="@+id/navList"
+        android:id="@+id/nav_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintStart_toEndOf="@id/navFavorite"
+        app:layout_constraintStart_toEndOf="@id/nav_favorite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
