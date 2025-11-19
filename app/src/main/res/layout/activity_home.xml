@@ -8,7 +8,7 @@
     android:background="#2B2B3D"
     tools:context=".HomeActivity">
 
-    <!-- Include Top Nav -->
+    <!-- TOP NAV -->
     <include
         layout="@layout/layout_top_nav"
         android:id="@+id/layout_top_nav"
@@ -16,26 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Konten Tengah -->
+    <!-- TEMPAT FRAGMENT -->
     <FrameLayout
-        android:id="@+id/container_home"
+        android:id="@+id/container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_top_nav"
-        app:layout_constraintBottom_toTopOf="@id/layout_bottom_nav">
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom_nav" />
 
-
-    <!-- RecyclerView -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp"
-            android:clipToPadding="false" />
-    </FrameLayout>
-
-    <!-- Include Bottom Nav -->
+    <!-- BOTTOM NAV -->
     <include
         layout="@layout/layout_bottom_nav"
         android:id="@+id/layout_bottom_nav"
@@ -44,6 +35,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
