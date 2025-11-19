@@ -1,5 +1,6 @@
 package com.example.appbacanovel
 
-data class ChildModelClass(
-    val image: Int
+data class Child(
+    val image: Int,
+    val title: String
 )
