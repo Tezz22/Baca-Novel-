@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBacaNovel">
         <activity
+            android:name=".activity_book_content"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
