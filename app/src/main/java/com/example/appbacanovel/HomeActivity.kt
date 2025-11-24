@@ -12,7 +12,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-//
         loadFragment(FragmentHome())
 
         findViewById<View>(R.id.nav_home).setOnClickListener {
@@ -29,6 +28,14 @@ class HomeActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.nav_list).setOnClickListener {
             loadFragment(FragmentList())
+        }
+
+        findViewById<View>(R.id.nav_profile).setOnClickListener {
+            loadFragment(FragmentProfile())
+        }
+
+        findViewById<View>(R.id.nav_search).setOnClickListener {
+            loadFragment(FragmentSearch())
         }
     }
 
