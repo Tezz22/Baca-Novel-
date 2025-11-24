@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121C2D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- PROFILE PICTURE WRAPPER -->
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+
+            <!-- FOTO PROFIL -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="#3B82F6"
+                app:strokeWidth="3dp"
+                android:background="#1E293B" />
+
+            <!-- BUTTON GANTI FOTO -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGantiFoto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|end"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_edit"
+                app:iconTint="@android:color/white"
+                app:backgroundTint="#3B82F6"
+                android:elevation="4dp"
+                android:translationZ="6dp" />
+
+        </FrameLayout>
+
+        <!-- USERNAME -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_marginTop="24dp"
+            app:boxBackgroundMode= "outline"
+            app:boxStrokeColor="#3B82F6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:hint="Masukkan username"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- EMAIL (TIDAK BISA DIGANTI) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#3B82F6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:textColor="@android:color/white"
+                android:hint="email@contoh.com"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- UMUR -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Umur"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#3B82F6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUmur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@android:color/white"
+                android:hint="Masukkan umur"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- SAVE BUTTON -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSimpan"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Simpan Perubahan"
+            android:layout_marginTop="24dp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#3B82F6"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>
