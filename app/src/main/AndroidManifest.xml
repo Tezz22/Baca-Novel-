@@ -15,6 +15,10 @@
             android:name=".activity_book_content"
             android:exported="false" />
 
+        <activity
+            android:name=".BookDetailsActivity"
+            android:exported="false" />
+
 
         <activity
             android:name=".HomeActivity"
