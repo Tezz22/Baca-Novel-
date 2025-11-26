@@ -18,32 +18,14 @@ class FragmentHome : Fragment() {
     ) : View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         parent_recycler_view = view.findViewById(R.id.rv_home)
-        val parent_list = data_parent()
-        val parent_adapter = ParentAdapter(parent_list)
         parent_recycler_view.layoutManager = LinearLayoutManager(requireContext())
-        parent_recycler_view.adapter = parent_adapter
+        val parentList = listOf(
+            Parent("Novel Populer", BookData.getBookList()),
+            Parent("Novel Terbaru", BookData.getBookList())
+        )
+
+        val parentAdapter = ParentAdapter(parentList)
+        parent_recycler_view.adapter = parentAdapter
         return view
-
-    }
-    fun data_parent(): List<Parent> {
-        val isi_parent = mutableListOf<Parent>()
-
-        val isi_child1 = mutableListOf<Child>()
-        isi_parent.add(Parent("Rekomendasi Untuk Hari Ini", isi_child1))
-        isi_child1.add(Child(R.drawable.cover1, "Judul Novel 1"))
-        isi_child1.add(Child(R.drawable.cover2, "Judul Novel 2"))
-        isi_child1.add(Child(R.drawable.cover3, "Judul Novel 3"))
-        isi_child1.add(Child(R.drawable.cover4, "Judul Novel 4"))
-        isi_child1.add(Child(R.drawable.cover5, "Judul Novel 5"))
-
-        val isi_child2 = mutableListOf<Child>()
-        isi_parent.add(Parent("Terpopuler", isi_child2))
-        isi_child2.add(Child(R.drawable.cover1, "Judul Novel 1"))
-        isi_child2.add(Child(R.drawable.cover2, "Judul Novel 2"))
-        isi_child2.add(Child(R.drawable.cover3, "Judul Novel 3"))
-        isi_child2.add(Child(R.drawable.cover4, "Judul Novel 4"))
-        isi_child2.add(Child(R.drawable.cover5, "Judul Novel 5"))
-
-        return isi_parent
     }
 }
