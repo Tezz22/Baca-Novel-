@@ -29,6 +29,14 @@ class LoginActivity : AppCompatActivity() {
         val tvRegisterLink = findViewById<TextView>(R.id.tv_register_link)
 
         // Button Login
+//        btnLogin.setOnClickListener {
+//            val email = etEmail.text.toString().trim()
+//            val password = etPassword.text.toString().trim()
+//
+//            if (email.isEmpty() || password.isEmpty()) {
+//                Toast.makeText(this, "Email & password wajib diisi", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -38,8 +46,16 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            startActivity(Intent(this, HomeActivity::class.java))
+            // KIRIM EMAIL KE HOME ACTIVITY
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("email_user", email)
+            startActivity(intent)
+            finish()
+        }
+
+
+
+        startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
     }
-}
