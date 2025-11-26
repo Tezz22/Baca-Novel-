@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
-        app:cardBackgroundColor="#2D2F3A"
+        app:cardBackgroundColor="#2B2B3D"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
