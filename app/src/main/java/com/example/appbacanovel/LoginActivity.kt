@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
         }
+
         // Manggil Variabel
         val etEmail = findViewById<EditText>(R.id.et_email)
         val etPassword = findViewById<EditText>(R.id.et_password)
@@ -29,14 +29,6 @@ class LoginActivity : AppCompatActivity() {
         val tvRegisterLink = findViewById<TextView>(R.id.tv_register_link)
 
         // Button Login
-//        btnLogin.setOnClickListener {
-//            val email = etEmail.text.toString().trim()
-//            val password = etPassword.text.toString().trim()
-//
-//            if (email.isEmpty() || password.isEmpty()) {
-//                Toast.makeText(this, "Email & password wajib diisi", Toast.LENGTH_SHORT).show()
-//                return@setOnClickListener
-//            }
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -46,16 +38,12 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // KIRIM EMAIL KE HOME ACTIVITY
             val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("email_user", email)
             startActivity(intent)
             finish()
         }
 
-
-
-        startActivity(Intent(this, HomeActivity::class.java))
-            finish()
-        }
+        // TIDAK ADA REDIRECT OTOMATIS DI SINI!
     }
+}
