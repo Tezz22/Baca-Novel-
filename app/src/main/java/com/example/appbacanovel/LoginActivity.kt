@@ -20,8 +20,8 @@ class LoginActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
         }
+
         // Manggil Variabel
         val etEmail = findViewById<EditText>(R.id.et_email)
         val etPassword = findViewById<EditText>(R.id.et_password)
@@ -38,8 +38,12 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            startActivity(Intent(this, HomeActivity::class.java))
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("email_user", email)
+            startActivity(intent)
             finish()
         }
+
+        // TIDAK ADA REDIRECT OTOMATIS DI SINI!
     }
 }

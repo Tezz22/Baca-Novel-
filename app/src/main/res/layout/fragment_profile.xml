@@ -15,8 +15,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INI profile!!!"
-        android:textSize="56dp">
+        android:textSize="56dp"/>
 
-    </TextView>
+    <!-- TOMBOL MENUJU SETTING PROFILE -->
+    <Button
+        android:id="@+id/btn_setting_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengaturan Profil"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|end" />
 
 </FrameLayout>
