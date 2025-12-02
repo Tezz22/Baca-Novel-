@@ -12,18 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBacaNovel">
         <activity
+            android:name=".SettingProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity_book_content"
             android:exported="false" />
-
         <activity
             android:name=".BookDetailsActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
-
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -39,13 +38,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
     </application>
 
