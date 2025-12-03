@@ -20,30 +20,47 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
+        // ===========================================================
+        // AUTO LOGIN CHECK (LETakkan DI SINI)
+        // ===========================================================
+        val pref = getSharedPreferences("userData", MODE_PRIVATE)
+
+        if (pref.getBoolean("logged_in", false)) {
+            startActivity(Intent(this, HomeActivity::class.java))
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            finish()
+            return
+        }
+
+        // ===========================================================
+        // SYSTEM BAR HANDLER (biarkan bawaan)
+        // ===========================================================
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-
-        // LOAD ANIMATION
+        // ===========================================================
+        // ANIMASI LOGIN PAGE
+        // ===========================================================
         val fade = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up)
 
-        // AMBIL VIEW DARI XML
         val title = findViewById<TextView?>(R.id.tv_title)
         val cardLogin = findViewById<CardView?>(R.id.card_login)
         val tvSocial = findViewById<TextView?>(R.id.tv_social)
         val tvRegister = findViewById<TextView?>(R.id.tv_register_link)
 
-        // APPLY ANIMASI
         title?.startAnimation(fade)
         cardLogin?.startAnimation(slideUp)
         tvSocial?.startAnimation(fade.apply { startOffset = 300 })
         tvRegister?.startAnimation(fade.apply { startOffset = 500 })
 
+
+        // ===========================================================
         // LOGIC LOGIN
+        // ===========================================================
         val etEmail = findViewById<EditText>(R.id.et_email)
         val etPassword = findViewById<EditText>(R.id.et_password)
         val btnLogin = findViewById<Button>(R.id.btn_login)
@@ -57,16 +74,31 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // SIMPAN EMAIL KE SHAREDPREFS
-            val pref = getSharedPreferences("userData", MODE_PRIVATE)
-            pref.edit().putString("email", email).apply()
+            // VALIDASI EMAIL FORMAT
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Format email tidak valid!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
+            // SIMPAN STATUS LOGIN + EMAIL
+            pref.edit().apply {
+                putBoolean("logged_in", true)
+                putString("email", email)
+                apply()
+            }
 
-            // PINDAH KE HOME
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("email_user", email)
-            startActivity(intent)
+            // MASUK HOME
+            startActivity(Intent(this, HomeActivity::class.java))
+            overridePendingTransition(R.anim.slide_up, R.anim.fade_out)
             finish()
+        }
+
+        // ===========================================================
+        // PINDAH KE REGISTER ACTIVITY
+        // ===========================================================
+        tvRegister?.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+            overridePendingTransition(R.anim.slide_up, R.anim.fade_out)
         }
     }
 }
