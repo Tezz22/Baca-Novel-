@@ -1,5 +1,6 @@
 package com.example.appbacanovel
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +32,11 @@ class FragmentSearch : Fragment() {
         adapter = NovelAdapter(
             itemList = BookData.getBookList(),
             mode = NovelAdapter.NovelMode.search_page
-        )
+        ){ selectedBook ->
+            val intent = Intent(requireContext(), BookDetailsActivity::class.java)
+            intent.putExtra("book_id", selectedBook.id)
+            startActivity(intent)
+        }
 
         rv_search.layoutManager = LinearLayoutManager(requireContext())
         rv_search.adapter = adapter
@@ -47,10 +52,8 @@ class FragmentSearch : Fragment() {
         val searchText = et_search.text.toString().trim()
         val fullBookList = BookData.getBookList()
 
-        // Filter daftar buku berdasarkan teks pencarian
-        // 'ignoreCase = true' membuat pencarian tidak membedakan huruf besar/kecil
         val filteredList = if (searchText.isEmpty()) {
-            fullBookList // Jika input kosong, tampilkan lagi semua buku
+            fullBookList
         } else {
             fullBookList.filter { book ->
                 book.title.contains(searchText, ignoreCase = true)

@@ -16,16 +16,16 @@
         tools:ignore="MissingConstraints">
 
         <!-- Tombol BACK -->
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_arrow_back"
-            android:tint="@android:color/transparent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="UseAppTint" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/btnBack"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:src="@drawable/ic_arrow_back"-->
+<!--            android:tint="@android:color/transparent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            tools:ignore="UseAppTint" />-->
 
         <!-- GAMBAR COVER -->
         <ImageView
@@ -125,6 +125,8 @@
         </LinearLayout>
 
         <!-- TOMBOL BACA -->
+
+        <!-- TOMBOL BOOKMARK -->
         <Button
             android:id="@+id/btnBaca"
             android:layout_width="150dp"
@@ -135,11 +137,11 @@
             android:textAllCaps="false"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/btnBookmark"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
 
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutGenre" />
 
-        <!-- TOMBOL BOOKMARK -->
         <ImageButton
             android:id="@+id/btnBookmark"
             android:layout_width="48dp"
@@ -165,27 +167,29 @@
             app:tint="@android:color/white" />
 
         <!-- SINOPSIS -->
+
+
+        <!-- RECYCLER VIEW -->
+
         <TextView
             android:id="@+id/txtSinopsis"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, libero sed placerat blandit, urna massa facilisis arcu, vitae elementum ipsum augue non justtor, urna eget tincidunt sagittis, erat ante sollicitudin felis, vitae ullamcorper turpis magna vel orci. Praesent ac odio vitae urna ferm"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, libero sed placerat blandit, urna massa facilisis arcu, vitae elementum ipsum augue non justtor, urna eget tincidunt sagittis, erat ante sollicitudin felis, vitae ullamcorper turpis magna vel orci. Praesent ac odio vitae urna ferm"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnBaca" />
 
-
-
-        <!-- RECYCLER VIEW -->
         <TextView
             android:id="@+id/txtSerupa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="32dp"
             android:text="Serupa Lainnya"
             android:textColor="@android:color/white"
             android:textSize="18sp"

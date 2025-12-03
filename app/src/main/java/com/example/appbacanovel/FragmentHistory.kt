@@ -1,5 +1,6 @@
 package com.example.appbacanovel
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +26,11 @@ class FragmentHistory : Fragment() {
         history_recycler_view.adapter = NovelAdapter(
             itemList = BookData.getBookList(),
             mode = NovelAdapter.NovelMode.history_page
-        )
+        ){ selectedBook ->
+            val intent = Intent(requireContext(), BookDetailsActivity::class.java)
+            intent.putExtra("book_id", selectedBook.id)
+            startActivity(intent)
+        }
 
         return view
     }

@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class NovelAdapter (
     private var itemList: List<Book>,
-    private val mode: NovelMode
+    private val mode: NovelMode,
+    private val onItemClick: (Book) -> Unit
     ) : RecyclerView.Adapter<NovelAdapter.NovelViewHolder>() {
     enum class NovelMode{
         home_page,
@@ -38,6 +39,10 @@ class NovelAdapter (
 
     override fun onBindViewHolder(holder: NovelAdapter.NovelViewHolder, position: Int) {
         val currentItem = itemList[position]
+
+        holder.view.setOnClickListener {
+            onItemClick(currentItem)
+        }
 
         when(mode) {
             NovelMode.home_page -> bindHome(holder.view, currentItem)

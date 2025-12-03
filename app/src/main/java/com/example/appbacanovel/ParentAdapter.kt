@@ -1,5 +1,6 @@
 package com.example.appbacanovel
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,11 @@ class ParentAdapter(
         holder.childRecyclerView.adapter = NovelAdapter(
             itemList = parentItem.children,
             mode = NovelAdapter.NovelMode.home_page
-        )
+        ) { selectedBook ->
+            val intent = Intent(holder.itemView.context, BookDetailsActivity::class.java)
+            intent.putExtra("book_id", selectedBook.id)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

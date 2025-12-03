@@ -1,6 +1,8 @@
 package com.example.appbacanovel
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,15 +17,11 @@ class BookDetailsActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_book_details)
 
-        // Untuk handle padding status bar (biarkan saja)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
-
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerRekomendasi)
 
@@ -34,6 +32,19 @@ class BookDetailsActivity : AppCompatActivity() {
             R.drawable.cover4,
             R.drawable.cover5
         )
+
+        val book_id = intent.getIntExtra("book_id", -1)
+        val book = BookData.getBookList().find { it.id == book_id }
+        if (book != null) {
+            findViewById<TextView>(R.id.txtJudul).text = book.title
+            findViewById<TextView>(R.id.txtAuthor).text = book.author
+            findViewById<TextView>(R.id.txtPenerbit).text = book.penerbit
+            findViewById<TextView>(R.id.txtTahun).text = book.tahun_terbit
+            findViewById<TextView>(R.id.txtTipe).text = book.tipe
+            findViewById<TextView>(R.id.txtSinopsis).text = book.synopsis
+            findViewById<ImageView>(R.id.imgCover).setImageResource(book.cover)
+        }
+
 
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
