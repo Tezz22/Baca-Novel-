@@ -5,6 +5,7 @@ data class Book(
     val title : String,
     val author : String,
     val status : String? = null,
+    val synopsis : String,
     val isi: String,
     val cover : Int
 )

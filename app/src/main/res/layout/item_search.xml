@@ -21,7 +21,7 @@
             android:padding="6dp">
 
             <ImageView
-                android:id="@+id/iv_history_cover"
+                android:id="@+id/iv_search_cover"
                 android:layout_width="60dp"
                 android:layout_height="90dp"
                 android:background="#FF3838"
@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_history_title"
+                    android:id="@+id/tv_search_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Judul"
@@ -44,7 +44,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tv_history_author"
+                    android:id="@+id/tv_search_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -52,29 +52,16 @@
                     android:textColor="#E0E0E0" />
 
                 <TextView
-                    android:id="@+id/tv_history_status"
+                    android:id="@+id/tv_search_update"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Terakhir dibaca 2 hari lalu"
+                    android:text="Update 2 hari lalu"
                     android:textColor="#9A9A9A" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/btn_lanjut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_button_lanjut"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="24dp"
-                android:text="Lanjut"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
