@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBacaNovel">
         <activity
-            android:name=".SettingProfileActivity"
+            android:name=".SettingProfile"
             android:exported="false" />
         <activity
             android:name=".activity_book_content"

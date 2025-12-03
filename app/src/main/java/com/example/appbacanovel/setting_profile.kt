@@ -58,21 +58,19 @@ class SettingProfile : AppCompatActivity() {
         pickImage.launch(intent)
     }
 
-    // ============================
+
     // LOAD DATA (contoh dari SharedPreferences)
-    // ============================
     private fun loadUserData() {
         val pref = getSharedPreferences("userData", MODE_PRIVATE)
-
+        binding.txtEmail.setText(pref.getString("email", ""))
         binding.edtUsername.setText(pref.getString("username", ""))
-        binding.txtEmail.setText(pref.getString("email", "email@contoh.com"))
         binding.edtUmur.setText(pref.getString("umur", ""))
-
         val imageUri = pref.getString("foto", null)
         if (imageUri != null) {
             binding.imgProfile.setImageURI(imageUri.toUri())
         }
     }
+
 
     // ============================
     // SIMPAN PERUBAHAN PROFIL

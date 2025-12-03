@@ -1,30 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:background="#121C2D">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_profile"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INI profile!!!"
-        android:textSize="56dp"/>
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-    <!-- TOMBOL MENUJU SETTING PROFILE -->
-    <Button
-        android:id="@+id/btn_setting_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pengaturan Profil"
-        android:padding="12dp"
-        android:layout_margin="16dp"
-        android:layout_gravity="top|end" />
+        <!-- FOTO PROFIL -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgProfileUser"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_profile"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:strokeColor="#3B82F6"
+            app:strokeWidth="3dp"
+            android:background="#1E293B"
+            android:layout_marginTop="16dp"/>
 
-</FrameLayout>
+        <!-- NAMA USER -->
+        <TextView
+            android:id="@+id/txtNameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama User"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <!-- EMAIL USER -->
+        <TextView
+            android:id="@+id/txtEmailUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email@contoh.com"
+            android:textColor="#9CA3AF"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+
+        <!-- BTN SETTING PROFIL -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_setting_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profil"
+            android:layout_marginTop="16dp"
+            app:cornerRadius="15dp"
+            app:backgroundTint="#3B82F6"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+
+        <!-- CARD: STATISTICS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            android:background="#1F2A3D"
+            android:layout_marginBottom="16dp"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp"
+            android:weightSum="3"
+            android:clipToPadding="false"
+            android:backgroundTintMode="src_atop"
+            android:backgroundTint="#1E293B"
+            android:elevation="4dp">
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtFavoriteCount"-->
+<!--                    android:text="12"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold"/>-->
+<!--                <TextView android:text="Favorit"-->
+<!--                    android:textColor="#9CA3AF" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtHistoryCount"-->
+<!--                    android:text="8"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold"/>-->
+<!--                <TextView android:text="Riwayat"-->
+<!--                    android:textColor="#9CA3AF" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtBookmarkCount"-->
+<!--                    android:text="24"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold"/>-->
+<!--                <TextView android:text="Disimpan"-->
+<!--                    android:textColor="#9CA3AF" />-->
+<!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <!-- MENU GRID -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignBounds"
+            android:useDefaultMargins="true">
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_favorite"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:text="Favorit"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_history"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:text="Riwayat"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_setting"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:text="Pengaturan"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_logout"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:text="Keluar"/>-->
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>

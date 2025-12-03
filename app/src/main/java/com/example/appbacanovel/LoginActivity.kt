@@ -38,6 +38,13 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
+
+
+            val pref = getSharedPreferences("userData", MODE_PRIVATE)
+            pref.edit().putString("email", email).apply()
+
+
             val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("email_user", email)
             startActivity(intent)

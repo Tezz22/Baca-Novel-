@@ -46,20 +46,24 @@
 
         <!-- USERNAME -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
             android:layout_marginTop="24dp"
-            app:boxBackgroundMode= "outline"
-            app:boxStrokeColor="#3B82F6">
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#3B82F6"
+            app:hintTextColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:hint="Masukkan username"/>
+                android:textColorHint="#8AA0C8"
+                />
         </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <!-- EMAIL (TIDAK BISA DIGANTI) -->
@@ -77,18 +81,20 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:textColor="@android:color/white"
-                android:hint="email@contoh.com"/>
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <!-- UMUR -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Umur"
             android:layout_marginTop="16dp"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="#3B82F6">
+            app:boxStrokeColor="#3B82F6"
+            app:hintTextColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUmur"
@@ -96,8 +102,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textColor="@android:color/white"
-                android:hint="Masukkan umur"/>
+                android:textColorHint="#8AA0C8"
+                />
         </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <!-- SAVE BUTTON -->
