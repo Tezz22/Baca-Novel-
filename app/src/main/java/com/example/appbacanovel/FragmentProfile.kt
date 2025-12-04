@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
@@ -26,8 +27,10 @@ class FragmentProfile : Fragment() {
         val imgProfile = view.findViewById<ShapeableImageView>(R.id.imgProfileUser)
         val txtName = view.findViewById<TextView>(R.id.txtNameUser)
         val txtEmail = view.findViewById<TextView>(R.id.txtEmailUser)
+
         val btnSetting = view.findViewById<MaterialButton>(R.id.btn_setting_profile)
         val btnLogout = view.findViewById<MaterialButton>(R.id.btn_logout)
+        val btnContact = view.findViewById<MaterialButton>(R.id.btn_contact_dev) // <-- tombol WA
 
         // AMBIL DATA USER
         val pref = requireContext().getSharedPreferences("userData", android.content.Context.MODE_PRIVATE)
@@ -66,6 +69,23 @@ class FragmentProfile : Fragment() {
                 }
                 .setNegativeButton("Batal", null)
                 .show()
+        }
+
+        // TOMBOL HUBUNGI DEVELOPER (WHATSAPP)
+        btnContact.setOnClickListener {
+
+            val phone = "6281281738632"
+            val message = "Halo bang, saya mau tanya tentang aplikasi Baca Novel."
+            val url = "https://wa.me/$phone?text=${Uri.encode(message)}"
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+
+            try {
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "WhatsApp tidak ditemukan!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         return view
