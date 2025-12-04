@@ -46,7 +46,7 @@
             android:textSize="14sp"
             android:layout_marginTop="4dp"/>
 
-        <!-- BTN SETTING PROFIL -->
+        <!-- BTN EDIT PROFIL -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_setting_profile"
             android:layout_width="wrap_content"
@@ -55,6 +55,20 @@
             android:layout_marginTop="16dp"
             app:cornerRadius="15dp"
             app:backgroundTint="#3B82F6"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+
+        <!-- BTN LOGOUT -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_marginTop="12dp"
+            app:cornerRadius="15dp"
+            app:backgroundTint="#DC2626"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:paddingLeft="20dp"
@@ -73,60 +87,8 @@
             android:paddingBottom="24dp"
             android:paddingTop="24dp"
             android:weightSum="3"
-            android:clipToPadding="false"
-            android:backgroundTintMode="src_atop"
             android:backgroundTint="#1E293B"
-            android:elevation="4dp">
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-<!--                <TextView-->
-<!--                    android:id="@+id/txtFavoriteCount"-->
-<!--                    android:text="12"-->
-<!--                    android:textColor="@android:color/white"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold"/>-->
-<!--                <TextView android:text="Favorit"-->
-<!--                    android:textColor="#9CA3AF" />-->
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-<!--                <TextView-->
-<!--                    android:id="@+id/txtHistoryCount"-->
-<!--                    android:text="8"-->
-<!--                    android:textColor="@android:color/white"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold"/>-->
-<!--                <TextView android:text="Riwayat"-->
-<!--                    android:textColor="#9CA3AF" />-->
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
-<!--                <TextView-->
-<!--                    android:id="@+id/txtBookmarkCount"-->
-<!--                    android:text="24"-->
-<!--                    android:textColor="@android:color/white"-->
-<!--                    android:textSize="20sp"-->
-<!--                    android:textStyle="bold"/>-->
-<!--                <TextView android:text="Disimpan"-->
-<!--                    android:textColor="#9CA3AF" />-->
-<!--            </LinearLayout>-->
-
-        </LinearLayout>
+            android:elevation="4dp"/>
 
         <!-- MENU GRID -->
         <GridLayout
@@ -135,37 +97,7 @@
             android:columnCount="2"
             android:rowCount="2"
             android:alignmentMode="alignBounds"
-            android:useDefaultMargins="true">
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_favorite"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:text="Favorit"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_history"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:text="Riwayat"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_setting"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:text="Pengaturan"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_logout"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_columnWeight="1"-->
-<!--                android:text="Keluar"/>-->
-
-        </GridLayout>
+            android:useDefaultMargins="true"/>
 
     </LinearLayout>
 
