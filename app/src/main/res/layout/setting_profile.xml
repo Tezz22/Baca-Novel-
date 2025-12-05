@@ -42,7 +42,18 @@
                 android:elevation="4dp"
                 android:translationZ="6dp" />
 
+
         </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Informasi Akun"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
 
         <!-- USERNAME -->
         <com.google.android.material.textfield.TextInputLayout
@@ -55,6 +66,8 @@
             app:boxStrokeColor="#3B82F6"
             app:hintTextColor="@color/white">
 
+
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
@@ -62,6 +75,7 @@
                 android:textColor="@android:color/white"
                 android:textColorHint="#8AA0C8"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -117,7 +131,14 @@
             android:layout_marginTop="24dp"
             app:cornerRadius="12dp"
             app:backgroundTint="#3B82F6"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:icon="@drawable/ic_check"
+            app:iconTint="@android:color/white"
+            app:iconPadding="12dp"
+            app:iconGravity="textStart"
+            />
+
+
 
     </LinearLayout>
 

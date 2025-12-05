@@ -15,7 +15,7 @@
             android:name=".SettingProfile"
             android:exported="false" />
         <activity
-            android:name=".activity_book_content"
+            android:name=".BookContentActivity"
             android:exported="false" />
         <activity
             android:name=".BookDetailsActivity"
