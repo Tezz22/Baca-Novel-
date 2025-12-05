@@ -1,5 +1,6 @@
 package com.example.appbacanovel
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -9,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appbacanovel.RekomendasiAdapter
 
 class BookDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +22,10 @@ class BookDetailsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        val btnBookmark = findViewById<ImageView>(R.id.btnBookmark)
+        val btnShare = findViewById<ImageView>(R.id.btnShare)
+        val btnBaca = findViewById<TextView>(R.id.btnBaca)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerRekomendasi)
-
         val listRekomendasi = listOf(
             R.drawable.cover1,
             R.drawable.cover2,
@@ -45,6 +46,22 @@ class BookDetailsActivity : AppCompatActivity() {
             findViewById<ImageView>(R.id.imgCover).setImageResource(book.cover)
         }
 
+        btnBaca.setOnClickListener {
+            val intent = Intent(this, BookContentActivity::class.java)
+            intent.putExtra("book_id", book_id)
+            startActivity(intent)
+        }
+
+        btnBookmark.setOnClickListener {
+
+        }
+
+        btnShare.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, "Saya membaca novel ${book?.title} dari Novelia")
+            startActivity(Intent.createChooser(intent, "Bagikan melalui"))
+        }
 
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
