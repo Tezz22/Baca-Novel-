@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RekomendasiAdapter(
-    private val listCover: List<Int>
+    private val listCover: Novel<Int>
 ) : RecyclerView.Adapter<RekomendasiAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
