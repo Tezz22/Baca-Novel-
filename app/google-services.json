@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962200780492",
+    "project_id": "novellia-80df8",
+    "storage_bucket": "novellia-80df8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962200780492:android:1c4f524cfdd3de45148c69",
+        "android_client_info": {
+          "package_name": "com.example.appbacanovel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ayV55-9XsIyCOXSfRlTKikGRQPRB8bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
