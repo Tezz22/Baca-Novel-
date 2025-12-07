@@ -102,6 +102,23 @@ class NovelAdapter (
 
 
     private fun bindFavorite(view: View, item: Book) {
+        val image = view.findViewById<ImageView>(R.id.iv_fav_cover)
+        val title = view.findViewById<TextView>(R.id.tv_fav_title)
+        val author = view.findViewById<TextView>(R.id.tv_fav_author)
+        val btn_favorite_remove = view.findViewById<ImageButton>(R.id.btn_favorite_remove)
+
+        image.setImageResource(item.cover)
+        title.text = item.title
+        author.text = item.author
+
+        btn_favorite_remove.setOnClickListener {
+            ButtonFavoriteManager.addFavorite(view.context, item.id)
+            val pos = adapterPosition(view)
+            if (pos != -1) {
+                itemList.removeAt(pos)
+                notifyItemRemoved(pos)
+            }
+        }
 
     }
 
