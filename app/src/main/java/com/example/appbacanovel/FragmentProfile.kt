@@ -48,7 +48,7 @@ class FragmentProfile : Fragment() {
 
         // KE HALAMAN SETTING PROFILE
         btnSetting.setOnClickListener {
-            startActivity(Intent(requireContext(), SettingProfile::class.java))
+            startActivity(Intent(requireContext(), SettingProfileActivity::class.java))
         }
 
         // ➤ TOMBOL LOGOUT + DIALOG

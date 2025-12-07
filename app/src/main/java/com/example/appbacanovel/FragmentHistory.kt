@@ -24,7 +24,7 @@ class FragmentHistory : Fragment() {
             androidx.recyclerview.widget.LinearLayoutManager(requireContext())
 
         history_recycler_view.adapter = NovelAdapter(
-            itemList = BookData.getBookList(),
+            itemList = BookData.getBookList() as MutableList<Book>,
             mode = NovelAdapter.NovelMode.history_page
         ){ selectedBook ->
             val intent = Intent(requireContext(), BookDetailsActivity::class.java)

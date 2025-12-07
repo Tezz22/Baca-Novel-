@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,11 +21,10 @@ class FragmentList : Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         novelRecyclerView = view.findViewById(R.id.rv_list)
-        novelRecyclerView.layoutManager =
-            androidx.recyclerview.widget.LinearLayoutManager(requireContext())
+        novelRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
 
         novelRecyclerView.adapter = NovelAdapter(
-            itemList = BookData.getBookList(),
+            itemList = BookData.getBookList() as MutableList<Book>,
             mode = NovelAdapter.NovelMode.list_page
         ) { selectedBook ->
             val intent = Intent(requireContext(), BookDetailsActivity::class.java)

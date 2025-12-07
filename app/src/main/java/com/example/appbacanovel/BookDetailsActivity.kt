@@ -12,6 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class BookDetailsActivity : AppCompatActivity() {
+    private lateinit var novelRecyclerView: RecyclerView
+    private lateinit var btnBookmark: ImageView
+    private lateinit var btnShare: ImageView
+    private lateinit var btnBaca: TextView
+
+    private var bookId: Int = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,20 +29,17 @@ class BookDetailsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnBookmark = findViewById<ImageView>(R.id.btnBookmark)
-        val btnShare = findViewById<ImageView>(R.id.btnShare)
-        val btnBaca = findViewById<TextView>(R.id.btnBaca)
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerRekomendasi)
-        val listRekomendasi = listOf(
-            R.drawable.cover1,
-            R.drawable.cover2,
-            R.drawable.cover3,
-            R.drawable.cover4,
-            R.drawable.cover5
-        )
 
-        val book_id = intent.getIntExtra("book_id", -1)
-        val book = BookData.getBookList().find { it.id == book_id }
+        btnBookmark = findViewById(R.id.btnBookmark)
+        btnShare = findViewById(R.id.btnShare)
+        btnBaca = findViewById(R.id.btnBaca)
+        novelRecyclerView = findViewById(R.id.recyclerRekomendasi)
+        novelRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        bookId = intent.getIntExtra("book_id", -1)
+        val book = BookData.getBookList().find { it.id == bookId }
         if (book != null) {
             findViewById<TextView>(R.id.txtJudul).text = book.title
             findViewById<TextView>(R.id.txtAuthor).text = book.author
@@ -46,26 +50,42 @@ class BookDetailsActivity : AppCompatActivity() {
             findViewById<ImageView>(R.id.imgCover).setImageResource(book.cover)
         }
 
-        btnBaca.setOnClickListener {
-            val intent = Intent(this, BookContentActivity::class.java)
-            intent.putExtra("book_id", book_id)
-            startActivity(intent)
-        }
+        updateFavoriteButton()
 
         btnBookmark.setOnClickListener {
+            ButtonFavoriteManager.addFavorite(this, bookId)
+            updateFavoriteButton()
+        }
 
+        btnBaca.setOnClickListener {
+            val intent = Intent(this, BookContentActivity::class.java)
+            intent.putExtra("book_id", bookId)
+            startActivity(intent)
         }
 
         btnShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, "Saya membaca novel ${book?.title} dari Novelia")
+            intent.putExtra(Intent.EXTRA_TEXT, "Saya membaca novel ${book?.title} di aplikasi Novelia.")
             startActivity(Intent.createChooser(intent, "Bagikan melalui"))
         }
 
-        recyclerView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        novelRecyclerView.adapter = NovelAdapter(
+            itemList = BookData.getBookList() as MutableList<Book>,
+            mode = NovelAdapter.NovelMode.rekom_book_detail
+        ) { selectedBook ->
+            val intent = Intent(this, BookDetailsActivity::class.java)
+            intent.putExtra("book_id", selectedBook.id)
+            startActivity(intent)
+            finish()
+        }
+    }
 
-        recyclerView.adapter = RekomendasiAdapter(listRekomendasi)
+    private fun updateFavoriteButton() {
+        if (ButtonFavoriteManager.isFavorite(this, bookId)) {
+            btnBookmark.setImageResource(R.drawable.ic_favorite_filled)
+        } else {
+            btnBookmark.setImageResource(R.drawable.ic_favorite)
+        }
     }
 }

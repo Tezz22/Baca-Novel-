@@ -30,7 +30,7 @@ class FragmentSearch : Fragment() {
         rv_search = view.findViewById(R.id.rv_search)
 
         adapter = NovelAdapter(
-            itemList = BookData.getBookList(),
+            itemList = BookData.getBookList() as MutableList<Book>,
             mode = NovelAdapter.NovelMode.search_page
         ){ selectedBook ->
             val intent = Intent(requireContext(), BookDetailsActivity::class.java)

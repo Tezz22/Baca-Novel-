@@ -3,12 +3,13 @@ package com.example.appbacanovel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class NovelAdapter (
-    private var itemList: List<Book>,
+    private var itemList: MutableList<Book>,
     private val mode: NovelMode,
     private val onItemClick: (Book) -> Unit
     ) : RecyclerView.Adapter<NovelAdapter.NovelViewHolder>() {
@@ -17,7 +18,8 @@ class NovelAdapter (
         list_page,
         history_page,
         favorite_page,
-        search_page
+        search_page,
+        rekom_book_detail
     }
     class NovelViewHolder (val view: View) : RecyclerView.ViewHolder(view)
 
@@ -27,10 +29,11 @@ class NovelAdapter (
     ): NovelAdapter.NovelViewHolder {
         val layoutId = when(mode) {
             NovelMode.home_page -> R.layout.item_child
-            NovelMode.list_page -> R.layout.item_list
+            NovelMode.list_page -> R.layout.item_child
             NovelMode.history_page -> R.layout.item_history
             NovelMode.favorite_page -> R.layout.item_favorite
             NovelMode.search_page -> R.layout.item_search
+            NovelMode.rekom_book_detail -> R.layout.item_child
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
         return NovelViewHolder(view)
@@ -50,6 +53,8 @@ class NovelAdapter (
             NovelMode.history_page -> bindHistory(holder.view, currentItem)
             NovelMode.favorite_page -> bindFavorite(holder.view, currentItem)
             NovelMode.search_page -> bindSearch(holder.view, currentItem)
+            NovelMode.rekom_book_detail -> bindRekom(holder.view, currentItem)
+
         }
     }
 
@@ -57,6 +62,16 @@ class NovelAdapter (
         return itemList.size
     }
 
+    private fun adapterPosition(view: View): Int {
+        return (view.parent as? RecyclerView)?.getChildAdapterPosition(view) ?: -1
+    }
+
+    private fun bindRekom(view: View, item: Book) {
+        val image = view.findViewById<ImageView>(R.id.iv_child_home)
+        val title = view.findViewById<TextView>(R.id.tv_book_title)
+        image.setImageResource(item.cover)
+        title.text = item.title
+    }
 
     private fun bindHome(view: View, item: Book) {
         val image = view.findViewById<ImageView>(R.id.iv_child_home)
@@ -66,13 +81,11 @@ class NovelAdapter (
     }
 
     private fun bindList(view: View, item: Book) {
-//        val image = view.findViewById<ImageView>(R.id.iv_list_cover)
-//        val title = view.findViewById<TextView>(R.id.tv_list_title)
-//        val author = view.findViewById<TextView>(R.id.tv_list_author)
-//
-//        image.setImageResource(item.cover)
-//        title.text = item.title
-//        author.text = item.author
+        val image = view.findViewById<ImageView>(R.id.iv_child_home)
+        val title = view.findViewById<TextView>(R.id.tv_book_title)
+
+        image.setImageResource(item.cover)
+        title.text = item.title
     }
 
     private fun bindHistory(view: View, item: Book) {
@@ -89,13 +102,7 @@ class NovelAdapter (
 
 
     private fun bindFavorite(view: View, item: Book) {
-//        val image = view.findViewById<ImageView>(R.id.iv_fav_cover)
-//        val title = view.findViewById<TextView>(R.id.tv_fav_title)
-//        val author = view.findViewById<TextView>(R.id.tv_fav_author)
-//
-//        image.setImageResource(item.cover)
-//        title.text = item.title
-//        author.text = item.author
+
     }
 
     private fun bindSearch(view: View, item: Book) {
@@ -109,7 +116,7 @@ class NovelAdapter (
         status.text = item.status
     }
 
-    fun update_data(new_data: List<Book>) {
+    fun update_data(new_data: MutableList<Book>) {
         itemList = new_data
         notifyDataSetChanged()
     }
