@@ -45,8 +45,8 @@ class BookDetailsActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.txtAuthor).text = book.author
             findViewById<TextView>(R.id.txtPenerbit).text = book.penerbit
             findViewById<TextView>(R.id.txtTahun).text = book.tahun_terbit
-            findViewById<TextView>(R.id.txtTipe).text = book.tipe
-            findViewById<TextView>(R.id.txtSinopsis).text = book.synopsis
+            findViewById<TextView>(R.id.txtTipe).text = book.genre.name
+            findViewById<TextView>(R.id.txtSinopsis).text = book.sinopsis
             findViewById<ImageView>(R.id.imgCover).setImageResource(book.cover)
         }
 

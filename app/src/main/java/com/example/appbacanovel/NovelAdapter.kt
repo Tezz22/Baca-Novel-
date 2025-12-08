@@ -7,6 +7,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+
 
 class NovelAdapter (
     private var itemList: MutableList<Book>,
@@ -69,6 +71,7 @@ class NovelAdapter (
     private fun bindRekom(view: View, item: Book) {
         val image = view.findViewById<ImageView>(R.id.iv_child_home)
         val title = view.findViewById<TextView>(R.id.tv_book_title)
+
         image.setImageResource(item.cover)
         title.text = item.title
     }
@@ -93,11 +96,12 @@ class NovelAdapter (
         val title = view.findViewById<TextView>(R.id.tv_history_title)
         val author = view.findViewById<TextView>(R.id.tv_history_author)
         val status = view.findViewById<TextView>(R.id.tv_history_status)
-
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+        val formattedDate: String = dateFormat.format(item.status)
         image.setImageResource(item.cover)
         title.text = item.title
         author.text = item.author
-        status.text = item.status
+        status.text = formattedDate
     }
 
 
@@ -130,10 +134,12 @@ class NovelAdapter (
         val title = view.findViewById<TextView>(R.id.tv_search_title)
         val author = view.findViewById<TextView>(R.id.tv_search_author)
         val status = view.findViewById<TextView>(R.id.tv_search_update)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+        val formattedDate: String = dateFormat.format(item.status)
         image.setImageResource(item.cover)
         title.text = item.title
         author.text = item.author
-        status.text = item.status
+        status.text = formattedDate
     }
 
     fun update_data(new_data: MutableList<Book>) {
