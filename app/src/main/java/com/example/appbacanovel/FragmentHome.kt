@@ -1,6 +1,5 @@
 package com.example.appbacanovel
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +20,7 @@ class FragmentHome : Fragment() {
         parent_recycler_view = view.findViewById(R.id.rv_home)
         parent_recycler_view.layoutManager = LinearLayoutManager(requireContext())
         val parentList = listOf(
+            Parent("Rekomendasi Untuk Hari Ini", BookData.getBookList()),
             Parent("Novel Populer", BookData.getBookList()),
             Parent("Novel Terbaru", BookData.getBookList())
         )
