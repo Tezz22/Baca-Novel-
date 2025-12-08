@@ -59,6 +59,6 @@ class FragmentSearch : Fragment() {
                 book.title.contains(searchText, ignoreCase = true)
             }
         }
-        adapter.update_data(filteredList)
+        adapter.update_data(filteredList as MutableList<Book>)
     }
 }

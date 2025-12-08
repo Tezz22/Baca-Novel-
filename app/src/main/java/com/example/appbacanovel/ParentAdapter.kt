@@ -27,7 +27,7 @@ class ParentAdapter(
         holder.parentTitle.text = parentItem.title
         holder.childRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
         holder.childRecyclerView.adapter = NovelAdapter(
-            itemList = parentItem.children,
+            itemList = parentItem.children as MutableList<Book>,
             mode = NovelAdapter.NovelMode.home_page
         ) { selectedBook ->
             val intent = Intent(holder.itemView.context, BookDetailsActivity::class.java)
