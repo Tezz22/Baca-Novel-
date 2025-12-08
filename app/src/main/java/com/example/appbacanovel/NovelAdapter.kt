@@ -105,22 +105,25 @@ class NovelAdapter (
         val image = view.findViewById<ImageView>(R.id.iv_fav_cover)
         val title = view.findViewById<TextView>(R.id.tv_fav_title)
         val author = view.findViewById<TextView>(R.id.tv_fav_author)
-        val btn_favorite_remove = view.findViewById<ImageButton>(R.id.btn_favorite_remove)
+        val btnRemove = view.findViewById<ImageButton>(R.id.btn_favorite_remove)
 
         image.setImageResource(item.cover)
         title.text = item.title
         author.text = item.author
 
-        btn_favorite_remove.setOnClickListener {
-            ButtonFavoriteManager.addFavorite(view.context, item.id)
+        btnRemove.setOnClickListener {
+            // HAPUS dari SharedPreferences
+            ButtonFavoriteManager.removeFavorite(view.context, item.id)
+
+            // HAPUS dari RecyclerView
             val pos = adapterPosition(view)
-            if (pos != -1) {
+            if (pos != -1 && pos < itemList.size) {
                 itemList.removeAt(pos)
                 notifyItemRemoved(pos)
             }
         }
-
     }
+
 
     private fun bindSearch(view: View, item: Book) {
         val image = view.findViewById<ImageView>(R.id.iv_search_cover)
