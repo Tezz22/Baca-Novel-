@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.widget.ImageView
 import android.widget.LinearLayout
 
+
 class BottomNav(
     private val activity: Activity,
     private var current: String,
@@ -16,14 +17,10 @@ class BottomNav(
     private lateinit var nav_favorite: LinearLayout
     private lateinit var nav_list: LinearLayout
 
-
-
     private lateinit var icon_home: ImageView
     private lateinit var icon_history: ImageView
     private lateinit var icon_favorite: ImageView
     private lateinit var icon_list: ImageView
-    private lateinit var nav_search: ImageView
-    private lateinit var nav_profile: ImageView
 
 
     fun setup() {
@@ -36,10 +33,6 @@ class BottomNav(
         icon_history = activity.findViewById(R.id.iv_history)
         icon_favorite = activity.findViewById(R.id.iv_favorite)
         icon_list = activity.findViewById(R.id.iv_list)
-        nav_search = activity.findViewById(R.id.nav_search)
-        nav_profile = activity.findViewById(R.id.nav_profile)
-
-
 
         highlight(current)
 
@@ -47,8 +40,6 @@ class BottomNav(
         nav_history.setOnClickListener { select("history") }
         nav_favorite.setOnClickListener { select("favorite") }
         nav_list.setOnClickListener { select("list") }
-        nav_search.setOnClickListener { select("search") }
-        nav_profile.setOnClickListener { select("profile") }
     }
 
     private fun select(target: String) {
@@ -61,17 +52,16 @@ class BottomNav(
     private fun highlight(target: String) {
 
         val inactive = Color.parseColor("#8FA3B8")
-        val active = Color.parseColor("#000000")
-        val activeBg = R.drawable.set_active_nav
+        val active = Color.WHITE
+        val activeBg = R.drawable.nav_active_bg
 
         resetAll(inactive)
 
         when (target) {
-            "home" -> setActive(icon_home, active, activeBg)
-            "history" -> setActive(icon_history, active, activeBg)
-            "favorite" -> setActive(icon_favorite, active, activeBg)
-            "list" -> setActive(icon_list, active, activeBg)
-
+            "home" -> setActive(nav_home, icon_home, active, activeBg)
+            "history" -> setActive(nav_history, icon_history, active, activeBg)
+            "favorite" -> setActive(nav_favorite, icon_favorite, active, activeBg)
+            "list" -> setActive(nav_list, icon_list, active, activeBg)
         }
     }
 
@@ -81,14 +71,14 @@ class BottomNav(
         icon_favorite.setColorFilter(color)
         icon_list.setColorFilter(color)
 
-        icon_home.background = null
-        icon_history.background = null
-        icon_favorite.background = null
-        icon_list.background = null
+        nav_home.background = null
+        nav_history.background = null
+        nav_favorite.background = null
+        nav_list.background = null
     }
 
-    private fun setActive(icon: ImageView, color: Int, bg: Int) {
+    private fun setActive(container: LinearLayout, icon: ImageView, color: Int, bg: Int) {
         icon.setColorFilter(color)
-        icon.setBackgroundResource(bg)
+        container.setBackgroundResource(bg)  // ⬅ highlight luas di container
     }
 }
