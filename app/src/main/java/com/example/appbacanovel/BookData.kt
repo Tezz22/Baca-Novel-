@@ -3,6 +3,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 object BookData {
+    fun getBookByGenre(targetGenre: genre): List<Book> {
+        return getBookList().filter { it.genre == targetGenre }
+    }
+
     fun getBookList(): List<Book> {
         // Using SimpleDateFormat to parse the date string to Date object
         val dateFormat = SimpleDateFormat("yyyy-MM-dd") // Set the format you need

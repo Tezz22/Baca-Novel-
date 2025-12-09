@@ -22,7 +22,10 @@ class FragmentHome : Fragment() {
         val parentList = listOf(
             Parent("Rekomendasi Untuk Hari Ini", BookData.getBookList()),
             Parent("Novel Populer", BookData.getBookList()),
-            Parent("Novel Terbaru", BookData.getBookList())
+            Parent("Novel Terbaru", BookData.getBookList()),
+            Parent("Novel Fiksi ", BookData.getBookByGenre(genre.FICTION)),
+            Parent("Novel Non-Fiksi", BookData.getBookByGenre(genre.NON_FICTION)),
+            Parent("Komik Korea", BookData.getBookByGenre(genre.COMIC))
         )
 
         val parentAdapter = ParentAdapter(parentList)
