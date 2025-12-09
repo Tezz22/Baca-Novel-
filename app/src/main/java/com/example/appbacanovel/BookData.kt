@@ -48,7 +48,7 @@ object BookData {
                 R.drawable.cover3,
                 "Gramedia",
                 "2021",
-                dateFormat.parse("2021-03-15") ?: Date(),
+                System.currentTimeMillis(),
                 genre.COMIC),
             Book(4,
                 "The Crimes Of Steamfield",
@@ -66,7 +66,7 @@ object BookData {
                 R.drawable.cover4,
                 "Elex Media",
                 "2020",
-                dateFormat.parse("2020-07-20") ?: Date(),
+                System.currentTimeMillis(),
                 genre.HISTORY),
 
             Book(5, "Buku Orang Korea ",
@@ -76,7 +76,7 @@ object BookData {
                 R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
             Book(6, "Buku Orang Korea ",
@@ -85,7 +85,7 @@ object BookData {
                 "Setelah kematian misterius ayahnya, Isabella menemukan dirinya terjerat dalam dunia penuh dengan kebohongan dan intrik. Ayahnya yang seorang pengusaha sukses meninggalkan warisan yang penuh dengan rahasia, dan Isabella merasa dipaksa untuk mengungkap kebenaran di balik bisnis keluarganya yang tampaknya sempurna. Dalam perjalanannya, ia berhadapan dengan sekutu-sekutu yang tampaknya membantu, namun memiliki agenda tersendiri. Setiap langkah yang diambil Isabella membuka lebih banyak lapisan kebohongan, dan ia mulai meragukan siapa yang bisa dipercaya. \"The Shadows of Deception\" adalah kisah tentang pengkhianatan, kepercayaan, dan pencarian kebenaran di dunia yang penuh dengan kepalsuan.", R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
             Book(7, "Buku Orang Korea ",
@@ -94,7 +94,7 @@ object BookData {
                 "awokawk", R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
             Book(8, "Buku Orang Korea ",
@@ -103,7 +103,7 @@ object BookData {
                 "awokawk", R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
             Book(9, "Buku Orang Korea ",
@@ -112,7 +112,7 @@ object BookData {
                 "awokawk", R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
             Book(10, "Buku Orang Korea ",
@@ -121,9 +121,13 @@ object BookData {
                 "awokawk", R.drawable.cover5,
                 "Gramedia",
                 "2019",
-                dateFormat.parse("2019-12-10") ?: Date(),
+                System.currentTimeMillis(),
                 genre.SCIENCE),
 
         )
+    }
+
+    fun getBookByGenre(genre: genre): List<Book> {
+        return getBookList().filter { it.genre == genre }
     }
 }

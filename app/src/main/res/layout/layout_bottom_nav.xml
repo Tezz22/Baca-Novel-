@@ -7,7 +7,6 @@
     android:background="#383B52"
     android:paddingHorizontal="24dp">
 
-    <!-- Home -->
     <LinearLayout
         android:id="@+id/nav_home"
         android:layout_width="wrap_content"
@@ -21,13 +20,13 @@
         app:layout_constraintHorizontal_chainStyle="spread_inside">
 
         <ImageView
+            android:id="@+id/iv_home"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_home"
             app:tint="#FFFFFF" />
     </LinearLayout>
 
-    <!-- History -->
     <LinearLayout
         android:id="@+id/nav_history"
         android:layout_width="wrap_content"
@@ -40,6 +39,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
+            android:id="@+id/iv_history"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_history"
@@ -59,6 +59,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
+            android:id="@+id/iv_favorite"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_favorite"
@@ -78,6 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
+            android:id="@+id/iv_list"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_list"

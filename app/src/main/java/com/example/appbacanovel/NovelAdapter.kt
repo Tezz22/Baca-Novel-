@@ -133,7 +133,6 @@ class NovelAdapter (
         }
     }
 
-
     private fun bindSearch(view: View, item: Book) {
         val image = view.findViewById<ImageView>(R.id.iv_search_cover)
         val title = view.findViewById<TextView>(R.id.tv_search_title)
