@@ -2,6 +2,7 @@ package com.example.appbacanovel
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appbacanovel.HistoryManager.saveHistory
 
 class BookDetailsActivity : AppCompatActivity() {
     private lateinit var novelRecyclerView: RecyclerView
@@ -58,6 +60,11 @@ class BookDetailsActivity : AppCompatActivity() {
         }
 
         btnBaca.setOnClickListener {
+            val book = BookData.getBookList().find { it.id == bookId }
+            if (book != null) {
+                HistoryManager.saveHistory(this, book)
+            }
+
             val intent = Intent(this, BookContentActivity::class.java)
             intent.putExtra("book_id", bookId)
             startActivity(intent)

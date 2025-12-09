@@ -52,11 +52,11 @@
                     android:textColor="#E0E0E0" />
 
                 <TextView
-                    android:id="@+id/tv_search_update"
+                    android:id="@+id/tv_search_genre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Update 2 hari lalu"
+                    android:text="Fantasi"
                     android:textColor="#9A9A9A" />
             </LinearLayout>
 

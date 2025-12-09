@@ -8,6 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.Date
+
 
 
 class NovelAdapter (
@@ -96,12 +99,14 @@ class NovelAdapter (
         val title = view.findViewById<TextView>(R.id.tv_history_title)
         val author = view.findViewById<TextView>(R.id.tv_history_author)
         val status = view.findViewById<TextView>(R.id.tv_history_status)
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-        val formattedDate: String = dateFormat.format(item.status)
+
+        val date = SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault())
+        val formattedDate = date.format(Date(item.status))
+
         image.setImageResource(item.cover)
         title.text = item.title
         author.text = item.author
-        status.text = formattedDate
+        status.text = "Terakhir dibaca: $formattedDate"
     }
 
 
@@ -133,13 +138,11 @@ class NovelAdapter (
         val image = view.findViewById<ImageView>(R.id.iv_search_cover)
         val title = view.findViewById<TextView>(R.id.tv_search_title)
         val author = view.findViewById<TextView>(R.id.tv_search_author)
-        val status = view.findViewById<TextView>(R.id.tv_search_update)
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-        val formattedDate: String = dateFormat.format(item.status)
+        val status = view.findViewById<TextView>(R.id.tv_search_genre)
         image.setImageResource(item.cover)
         title.text = item.title
         author.text = item.author
-        status.text = formattedDate
+        status.text = item.genre.name
     }
 
     fun update_data(new_data: MutableList<Book>) {

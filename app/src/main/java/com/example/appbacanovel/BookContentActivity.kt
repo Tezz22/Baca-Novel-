@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appbacanovel.HistoryManager.saveHistory
 
 class BookContentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,9 @@ class BookContentActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.tvAuthor).text = book.author
             findViewById<TextView>(R.id.tvIsiCerita).text = book.isi
             findViewById<ImageView>(R.id.imgCover).setImageResource(book.cover)
+
+            // SAVE TO HISTORY
+            saveHistory(this, book)
         }
     }
 }
