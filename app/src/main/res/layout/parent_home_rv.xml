@@ -17,7 +17,9 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:text="Rekomendasi Untuk Hari Ini" />
+            android:text="Rekomendasi Untuk Hari Ini"
+            android:background="@drawable/bg_category"
+            android:textColor="#D8C781"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_child"
