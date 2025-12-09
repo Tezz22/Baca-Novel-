@@ -8,6 +8,7 @@ enum class genre {
     COMIC,
     SCIENCE,
     HISTORY,
+    ROMANCE,
 }
 
 // Book data class with enum integration
