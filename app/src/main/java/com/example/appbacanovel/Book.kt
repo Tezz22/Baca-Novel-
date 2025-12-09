@@ -12,6 +12,8 @@ enum class genre {
 }
 
 // Book data class with enum integration
+// int angka kecil
+// long angka besar untuk timestamp
 data class Book(
     val id: Int,
     val title: String,

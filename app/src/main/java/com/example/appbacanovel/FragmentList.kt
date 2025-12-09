@@ -21,7 +21,7 @@ class FragmentList : Fragment() {
         val view = inflater.inflate(R.layout.fragment_list, container, false)
 
         novelRecyclerView = view.findViewById(R.id.rv_list)
-        novelRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        novelRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3) //jadi kotak dan rapi
 
         novelRecyclerView.adapter = NovelAdapter(
             itemList = BookData.getBookList() as MutableList<Book>,

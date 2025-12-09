@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class FragmentFavorite : Fragment() {
 
-    private lateinit var favoriteRecyclerView: RecyclerView
+    private lateinit var favoriteRecyclerView: RecyclerView // MENAMPILKAN DAFTAR BUKU bentuk e list iso discroll
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,20 +30,20 @@ class FragmentFavorite : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        loadFavoriteBooks() // refresh saat kembali dari halaman lain
+        loadFavoriteBooks() // refresh saat kembali dari halaman lain otomatis di perbarui
     }
 
     private fun loadFavoriteBooks() {
-        val favIds = ButtonFavoriteManager.getFavorites(requireContext())
+        val favIds = ButtonFavoriteManager.getFavorites(requireContext()) // mengambil buku yang sudah ditandai favorit
 
-        val favoriteBooks = BookData.getBookList()
+        val favoriteBooks = BookData.getBookList() // mengambil yang hanya buku tanda favorit
             .filter { favIds.contains(it.id.toString()) }
             .toMutableList()
 
-        favoriteRecyclerView.adapter = NovelAdapter(
+        favoriteRecyclerView.adapter = NovelAdapter( // menampilkan buku fafvorit
             itemList = favoriteBooks,
             mode = NovelAdapter.NovelMode.favorite_page
-        ) { selectedBook ->
+        ) { selectedBook -> // jika di klik buku fav bakal masuk ke halaman detail
             val intent = Intent(requireContext(), BookDetailsActivity::class.java)
             intent.putExtra("book.id", selectedBook.id)
             startActivity(intent)

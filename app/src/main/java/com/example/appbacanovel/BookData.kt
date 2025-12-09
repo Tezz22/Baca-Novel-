@@ -4,7 +4,7 @@ import java.util.Date
 
 object BookData {
     fun getBookList(): List<Book> {
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd") // menampilkan tanggal ke user
 
         return listOf(
             Book(1, "Legend Of Exorcism", "Fei Tian Ye Xiang",
@@ -13,7 +13,7 @@ object BookData {
                 R.drawable.cover1,
                 "Gramedia",
                 "2023",
-                System.currentTimeMillis(), genre.FICTION), // Parse the date string into Date
+                System.currentTimeMillis(), genre.FICTION), // untuk mengambil waktu yang sekarang
             Book(2,
                 "Spineless",
                 "Samantha dan Rachel",
@@ -190,7 +190,7 @@ object BookData {
                 genre.FICTION),
         )
     }
-
+// dipakai untuk mengambil buku berdasarkan jenis genre
     fun getBookByGenre(genre: genre): List<Book> {
         return getBookList().filter { it.genre == genre }
     }
