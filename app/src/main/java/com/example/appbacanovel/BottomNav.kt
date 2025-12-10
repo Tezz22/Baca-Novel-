@@ -21,6 +21,9 @@ class BottomNav(
     private lateinit var icon_history: ImageView
     private lateinit var icon_favorite: ImageView
     private lateinit var icon_list: ImageView
+    private lateinit var icon_search: ImageView
+    private lateinit var icon_profile: ImageView
+
 
 
     fun setup() {
@@ -33,6 +36,9 @@ class BottomNav(
         icon_history = activity.findViewById(R.id.iv_history)
         icon_favorite = activity.findViewById(R.id.iv_favorite)
         icon_list = activity.findViewById(R.id.iv_list)
+        icon_search = activity.findViewById(R.id.nav_search)
+        icon_profile = activity.findViewById(R.id.nav_profile)
+
 
         highlight(current)
 
@@ -40,6 +46,8 @@ class BottomNav(
         nav_history.setOnClickListener { select("history") }
         nav_favorite.setOnClickListener { select("favorite") }
         nav_list.setOnClickListener { select("list") }
+        icon_search.setOnClickListener { select("search") }
+        icon_profile.setOnClickListener { select("profile") }
     }
 
     private fun select(target: String) {
@@ -62,6 +70,7 @@ class BottomNav(
             "history" -> setActive(nav_history, icon_history, active, activeBg)
             "favorite" -> setActive(nav_favorite, icon_favorite, active, activeBg)
             "list" -> setActive(nav_list, icon_list, active, activeBg)
+
         }
     }
 
@@ -70,15 +79,20 @@ class BottomNav(
         icon_history.setColorFilter(color)
         icon_favorite.setColorFilter(color)
         icon_list.setColorFilter(color)
+        icon_search.setColorFilter(color)
+        icon_profile.setColorFilter(color)
+
 
         nav_home.background = null
         nav_history.background = null
         nav_favorite.background = null
         nav_list.background = null
+        icon_search.background = null
+        icon_profile.background = null
     }
 
     private fun setActive(container: LinearLayout, icon: ImageView, color: Int, bg: Int) {
         icon.setColorFilter(color)
-        container.setBackgroundResource(bg)  // ⬅ highlight luas di container
+        container.setBackgroundResource(bg)
     }
 }

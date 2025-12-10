@@ -14,13 +14,11 @@ object HistoryManager {
         val oldArray = getHistoryArray(context)
         val newArray = JSONArray()
 
-        // Tambahkan data terbaru ke paling atas
         val obj = JSONObject()
         obj.put("id", book.id)
         obj.put("lastRead", System.currentTimeMillis())
         newArray.put(obj)
 
-        // Tambahkan data lama (selain yg sama ID)
         for (i in 0 until oldArray.length()) {
             val item = oldArray.getJSONObject(i)
             if (item.getInt("id") != book.id) {
