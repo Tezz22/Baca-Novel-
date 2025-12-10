@@ -20,6 +20,7 @@ class FragmentHome : Fragment() {
         parent_recycler_view = view.findViewById(R.id.rv_home)
         parent_recycler_view.layoutManager = LinearLayoutManager(requireContext())
         val parentList = listOf(
+            Parent("Rekomendasi Untuk Hari Ini", BookData.getBookList().shuffled().take(6)),
             Parent("Novel Populer", BookData.getBookList().shuffled().take(6)),
             Parent("Novel Terbaru", BookData.getBookList().shuffled().take(6)),
             Parent("Novel Fiksi ", BookData.getBookByGenre(genre.FICTION).take(6)),
