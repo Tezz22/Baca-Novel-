@@ -1,7 +1,4 @@
 package com.example.appbacanovel
-
-import java.time.LocalDate
-import java.util.Date
 enum class genre {
     FICTION,
     NON_FICTION,
@@ -11,9 +8,6 @@ enum class genre {
     ROMANCE,
 }
 
-// Book data class with enum integration
-// int angka kecil
-// long angka besar untuk timestamp
 data class Book(
     val id: Int,
     val title: String,

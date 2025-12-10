@@ -4,7 +4,7 @@ import android.content.Context
 
 object ButtonFavoriteManager {
 
-    private const val PREF_NAME = "MyPrefs"
+    private const val PREF_NAME = "prefs_favorite"
     private const val KEY_FAVORITE = "key_favorite"
 
     fun getFavorites(context: Context): MutableSet<String> {

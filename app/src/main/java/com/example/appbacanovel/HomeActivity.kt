@@ -1,9 +1,7 @@
 package com.example.appbacanovel
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 
 class HomeActivity : AppCompatActivity() {
 
@@ -13,34 +11,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val emailUser = intent.getStringExtra("email_user")
-
-//        loadFragment(FragmentHome())
-//
-//        findViewById<View>(R.id.nav_profile).setOnClickListener {
-//            val fragment = FragmentProfile()
-//
-//            val bundle = Bundle()
-//            bundle.putString("email_user", emailUser)
-//            fragment.arguments = bundle
-//
-//            loadFragment(fragment)
-//        }
-//
-//        findViewById<View>(R.id.nav_home).setOnClickListener {
-//            loadFragment(FragmentHome())
-//        }
-//        findViewById<View>(R.id.nav_history).setOnClickListener {
-//            loadFragment(FragmentHistory())
-//        }
-//        findViewById<View>(R.id.nav_favorite).setOnClickListener {
-//            loadFragment(FragmentFavorite())
-//        }
-//        findViewById<View>(R.id.nav_list).setOnClickListener {
-//            loadFragment(FragmentList())
-//        }
-//        findViewById<View>(R.id.nav_search).setOnClickListener {
-//            loadFragment(FragmentSearch())
-//        }
 
         bottom_nav = BottomNav(
             activity = this,
